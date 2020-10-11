@@ -49,7 +49,7 @@ class _HomeState extends State<Home> {
 
   pickImage() async{
     var image = await picker.getImage(source: ImageSource.camera);
-    if(image ==null) return null;
+    if(image == null) return null;
     setState(() {
       _image = File(image.path);
     });
@@ -57,7 +57,7 @@ class _HomeState extends State<Home> {
   }
   pickgallery() async{
     var image = await picker.getImage(source: ImageSource.gallery);
-    if(image ==null) return null;
+    if(image == null) return null;
     setState(() {
       _image = File(image.path);
     });
@@ -94,7 +94,8 @@ class _HomeState extends State<Home> {
                       child: Image.file(_image),
                     ),
                     SizedBox(height: 20,),
-                    _output != null ? Text('${_output[0]}',style: TextStyle(color: Colors.white,fontSize: 20),) : Container()
+                    _output != null ? Text('${_output[0]['label']}'.substring(1),style: TextStyle(color: Colors.white,fontSize: 20),) : Container(),
+                    SizedBox(height: 20),
                   ],
                 ),
               ),
@@ -104,7 +105,9 @@ class _HomeState extends State<Home> {
               child: Column(
                 children: [
                   GestureDetector(
-                    onTap: pickgallery(),
+                    onTap: (){
+                      pickgallery();
+                    },
                     child: Container(
                       width: MediaQuery.of(context).size.width-180,alignment: Alignment.center,padding: EdgeInsets.symmetric(horizontal: 24,vertical: 17),
                       decoration: BoxDecoration(
@@ -123,7 +126,9 @@ class _HomeState extends State<Home> {
               child: Column(
                 children: [
                   GestureDetector(
-                    onTap: pickImage(),
+                    onTap: (){
+                      pickImage();
+                    },
                     child: Container(
                       width: MediaQuery.of(context).size.width-180,alignment: Alignment.center,padding: EdgeInsets.symmetric(horizontal: 24,vertical: 17),
                       decoration: BoxDecoration(
