@@ -72,17 +72,17 @@ class _HomeState extends State<Home> {
         padding: EdgeInsets.symmetric(horizontal: 24),
         child: Column(
           children: [
-            SizedBox(height: 85,),
+            SizedBox(height: 130,),
             Text("TeachableMachine.com CNN",style: TextStyle(color: Colors.white,fontSize: 18)),
-            SizedBox(height: 6,),
+            SizedBox(height: 20,),
             Text("Detect Male or Female", style: TextStyle(color: Color(0xFFE99600), fontWeight: FontWeight.w500,fontSize: 28),textAlign: TextAlign.center,),
             SizedBox(height: 40,),
             Center(
               child: _loading ? Container(
-                width: 280,
+                width: 250,
                 child: Column(
                   children: [
-                    Image.asset('assets/logo1.png'),
+                    Image.asset('assets/logo1.png',fit: BoxFit.cover),
                     SizedBox(height: 50,)
                   ],
                 ),
@@ -94,7 +94,7 @@ class _HomeState extends State<Home> {
                       child: Image.file(_image),
                     ),
                     SizedBox(height: 20,),
-                    _output != null ? Text('${_output[0]['label']}'.substring(1),style: TextStyle(color: Colors.white,fontSize: 20),) : Container(),
+                    _output != null ? Text('${_output[0]['label']}',style: TextStyle(color: Colors.white,fontSize: 20),) : Container(),
                     SizedBox(height: 20),
                   ],
                 ),
@@ -109,12 +109,12 @@ class _HomeState extends State<Home> {
                       pickgallery();
                     },
                     child: Container(
-                      width: MediaQuery.of(context).size.width-180,alignment: Alignment.center,padding: EdgeInsets.symmetric(horizontal: 24,vertical: 17),
+                      width: MediaQuery.of(context).size.width-160,alignment: Alignment.center,padding: EdgeInsets.symmetric(horizontal: 24,vertical: 17),
                       decoration: BoxDecoration(
                         color: Color(0xFFE99600),
                         borderRadius: BorderRadius.circular(6)
                       ),
-                      child: Text("Take a photo",style: TextStyle(color: Colors.white),),
+                      child: Text("Take a photo",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w500,fontSize: 18),),
                     ),
                   )
                 ],
@@ -130,12 +130,12 @@ class _HomeState extends State<Home> {
                       pickImage();
                     },
                     child: Container(
-                      width: MediaQuery.of(context).size.width-180,alignment: Alignment.center,padding: EdgeInsets.symmetric(horizontal: 24,vertical: 17),
+                      width: MediaQuery.of(context).size.width-160,alignment: Alignment.center,padding: EdgeInsets.symmetric(horizontal: 24,vertical: 17),
                       decoration: BoxDecoration(
-                        color: Color(0xFFE99600),
+                        color: Color(0xFFD31A1A),
                         borderRadius: BorderRadius.circular(6)
                       ),
-                      child: Text("Camera Roll",style: TextStyle(color: Colors.white),),
+                      child: Text("Camera Roll",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w500,fontSize: 18),),
                     ),
                   )
                 ],

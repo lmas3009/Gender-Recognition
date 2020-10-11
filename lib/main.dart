@@ -33,12 +33,12 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body:SplashScreen(
-          seconds: 5,
+          seconds: 10,
           navigateAfterSeconds: Home(),
-          title: Text("Gender Classfication",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30,color: Colors.white)),
+          title: Text("Gender Recognition",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 40,color: Colors.white,),textAlign: TextAlign.center),
           image: Image.asset("assets/logo1.png"),
           backgroundColor: Colors.black,
-          photoSize: 50,
+          photoSize: 100,
           loaderColor: Color(0xFFEEDA28)
 
       )
